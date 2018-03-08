@@ -6,24 +6,22 @@
 (global-linum-mode 1)
 (setq linum-format "%d ")
 
+
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-  '(custom-safe-themes
+ '(company-c-headers-path-system
+  (quote
+   ("/usr/include/" "/usr/local/include/" "/usr/include/c++/7/")))
+ '(company-clang-arguments (quote ("-I/usr/include/c++/7" "-I/usr/include/")))
+ '(custom-safe-themes
    (quote
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))))
 
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip ((t (:background "white" :foreground "black"))))
- '(company-tooltip-common-selection ((t (:background "blue"))))
- '(company-tooltip-selection ((t (:background "blue" :foreground "#DCDCCC"))))
  '(whitespace-tab ((t (:background "black" :underline t)))))
 
 (load-theme 'smart-mode-line-light)
+
+(add-to-list 'company-backends 'company-c-headers)
+(global-set-key [home] 'move-beginning-of-line)
+(global-set-key [select] 'move-end-of-line)
 ;;; g4z3_custom.el ends here
