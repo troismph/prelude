@@ -24,4 +24,12 @@
 (add-to-list 'company-backends 'company-c-headers)
 (global-set-key [home] 'move-beginning-of-line)
 (global-set-key [select] 'move-end-of-line)
+
+;; pytho virtual env settings
+(venv-initialize-interactive-shells) ;; if you want interactive shell support
+(venv-initialize-eshell) ;; if you want eshell support
+;; note that setting `venv-location` is not necessary if you
+;; use the default location (`~/.virtualenvs`), or if the
+;; the environment variable `WORKON_HOME` points to the right place
+
 ;;; g4z3_custom.el ends here
