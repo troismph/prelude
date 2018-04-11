@@ -1,4 +1,6 @@
-;; g4z3's custom packages
+;;; package --- g4z3's custom packages
+
+;;; Commentary:
 
 ;;; Code:
 
@@ -20,11 +22,10 @@
 ;; Treat clipboard input as UTF-8 string first; compound text next, etc.
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
-(setq default-directory "c:/Users/penghan/src/")
-
 (define-key global-map "\C-cc" 'org-capture)
 
 (setq projectile-switch-project-action 'neotree-projectile-action)
+
 (global-set-key (kbd "M-x") 'execute-extended-command)
 
 (provide 'g4z3)
