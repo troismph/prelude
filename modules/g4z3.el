@@ -8,6 +8,7 @@
 (prelude-require-package 'virtualenvwrapper)
 (prelude-require-package 'company-c-headers)
 (prelude-require-package 'simpleclip)
+(prelude-require-package 'project-explorer)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -27,6 +28,8 @@
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
 (global-set-key (kbd "M-x") 'execute-extended-command)
+
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
