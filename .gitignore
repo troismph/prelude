@@ -13,12 +13,10 @@ ede-projects.el
 .DS_Store
 places
 .smex-items
-savefile/
 projectile-bookmarks.eld
 session*
 .cask
 tramp
-/var/pcache
 .emacs.desktop
 .emacs.desktop.lock
 network-security.data
@@ -27,3 +25,7 @@ prelude-cheatsheet.aux
 prelude-cheatsheet.log
 anaconda-mode/
 request/
+var/
+auto-save-list/
+savefile/
+project-explorer-cache/
