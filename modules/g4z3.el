@@ -9,6 +9,7 @@
 (prelude-require-package 'company-c-headers)
 (prelude-require-package 'simpleclip)
 (prelude-require-package 'project-explorer)
+(prelude-require-package 'workgroups2)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -38,7 +39,6 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "PROGRESS(p@/!)" "BLOCKED(b@/!)" "|" "DONE(d@/!)" "CANCELED(c@/!)")))
 
-(require 'workgroups2)
 (workgroups-mode 1)
 
 ;; copied from another el
