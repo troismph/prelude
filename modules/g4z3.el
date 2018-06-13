@@ -29,7 +29,49 @@
 
 (global-set-key (kbd "M-x") 'execute-extended-command)
 
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
+;; (setq request-message-level 'debug)
+;; (setq request-log-level 'debug)
+
+(setq org-icalendar-timezone "Asia/Shanghai")
+;; (setq org-caldav-files org-agenda-files)
+(setq org-log-done 'time)
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "PROGRESS(p@/!)" "BLOCKED(b@/!)" "|" "DONE(d@/!)" "CANCELED(c@/!)")))
+
+(require 'workgroups2)
+(workgroups-mode 1)
+
+;; copied from another el
+
+(global-linum-mode 1)
+(setq linum-format "%d ")
+
+(custom-set-variables
+ '(company-c-headers-path-system
+  (quote
+   ("/usr/include/" "/usr/local/include/" "/usr/include/c++/7/")))
+ '(company-clang-arguments (quote ("-I/usr/include/c++/7" "-I/usr/include/")))
+)
+
+;;(custom-set-faces
+;; '(whitespace-tab ((t (:background "black" :underline t)))))
+
+;;(load-theme 'smart-mode-line-light)
+
+(add-to-list 'company-backends 'company-c-headers)
+(global-set-key [home] 'move-beginning-of-line)
+(global-set-key [select] 'move-end-of-line)
+
+;; pytho virtual env settings
+(venv-initialize-interactive-shells) ;; if you want interactive shell support
+(venv-initialize-eshell) ;; if you want eshell support
+;; note that setting `venv-location` is not necessary if you
+;; use the default location (`~/.virtualenvs`), or if the
+;; the environment variable `WORKON_HOME` points to the right place
+
+;; end of copied section
+
+
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
