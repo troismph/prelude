@@ -62,13 +62,17 @@
     ((emacs-lisp . t)
      (shell . t)
      (python . t)
-     (awk . t)
      (js . t))))
+ '(org-capture-templates
+   (quote
+    (("c" "g4z3's default capture template" entry
+      (file "~/src/notes/inbox.org")
+      (file "~/src/notes/templates/capture.org")))))
  '(org-log-into-drawer t)
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
-    (org-caldav org-sync git-auto-commit-mode markdown-mode ggtags org-jira solarized-theme material-theme moe-theme poet-theme github-modern-theme eziam-theme project-explorer simpleclip company-c-headers virtualenvwrapper neotree company-anaconda anaconda-mode json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (ob-typescript org-caldav org-sync git-auto-commit-mode markdown-mode ggtags org-jira solarized-theme material-theme moe-theme poet-theme github-modern-theme eziam-theme project-explorer simpleclip company-c-headers virtualenvwrapper neotree company-anaconda anaconda-mode json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")

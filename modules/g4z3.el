@@ -10,6 +10,8 @@
 (prelude-require-package 'simpleclip)
 (prelude-require-package 'project-explorer)
 (prelude-require-package 'workgroups2)
+(prelude-require-package 'ob-typescript)
+(prelude-require-package 'exec-path-from-shell)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -37,7 +39,7 @@
 ;; (setq org-caldav-files org-agenda-files)
 (setq org-log-done 'time)
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "PROGRESS(p@/!)" "BLOCKED(b@/!)" "|" "DONE(d@/!)" "CANCELED(c@/!)")))
+      '((sequence "TODO(t@/!)" "PROGRESS(p@/!)" "BLOCKED(b@/!)" "|" "DONE(d@/!)" "CANCELED(c@/!)")))
 
 (workgroups-mode 1)
 
@@ -71,7 +73,13 @@
 
 ;; end of copied section
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((typescript . t)
+   ))
 
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
