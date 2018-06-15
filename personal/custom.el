@@ -24,6 +24,7 @@
     ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "e69a2d0522244f8ed18d2ba8fb8b60ff8753302522d9fed6ee96efa8942aff58" "e11569fd7e31321a33358ee4b232c2d3cf05caccd90f896e1df6cab228191109" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "7e4fe193db857147d1c6839998d9fc08bc58ba52121b9732c248d44471dd3438" "baec3b9226614da30a3e5135592a65910527df93a257bba423c542695281bc55" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
  '(fci-rule-color "#6a737d")
  '(gac-automatically-push-p t)
+ '(gud-pdb-command-name "pdb3")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -56,7 +57,7 @@
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
-    ("~/src/notes/tracker.org" "~/src/notes/ignore_calendar.org")))
+    ("~/src/notes/tracker.org" "~/src/notes/ignore/cal_inbox.org")))
  '(org-babel-load-languages
    (quote
     ((emacs-lisp . t)
