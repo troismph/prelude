@@ -12,6 +12,7 @@
 (prelude-require-package 'workgroups2)
 (prelude-require-package 'ob-typescript)
 (prelude-require-package 'exec-path-from-shell)
+(prelude-require-package 'tide)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
