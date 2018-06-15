@@ -82,5 +82,7 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+(setq python-shell-interpreter "python3")
+
 (provide 'g4z3)
 ;;; g4z3.el ends here
