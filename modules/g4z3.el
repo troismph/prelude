@@ -74,6 +74,13 @@
 
 ;; end of copied section
 
+(setenv "NODE_PATH"
+  (concat
+    "/usr/lib/node_modules"  ":"
+    (getenv "NODE_PATH")
+  )
+)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((typescript . t)
