@@ -70,6 +70,22 @@
       (file "~/src/notes/inbox.org")
       (file "~/src/notes/templates/capture.org")))))
  '(org-log-into-drawer t)
+ '(org-src-lang-modes
+   (quote
+    (("ocaml" . tuareg)
+     ("elisp" . emacs-lisp)
+     ("ditaa" . artist)
+     ("asymptote" . asy)
+     ("dot" . fundamental)
+     ("sqlite" . sql)
+     ("calc" . fundamental)
+     ("C" . c)
+     ("cpp" . c++)
+     ("C++" . c++)
+     ("screen" . shell-script)
+     ("shell" . sh)
+     ("bash" . sh)
+     ("js" . js2))))
  '(org-startup-truncated nil)
  '(package-selected-packages
    (quote
