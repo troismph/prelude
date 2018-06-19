@@ -33,11 +33,7 @@
 
 (global-set-key (kbd "M-x") 'execute-extended-command)
 
-;; (setq request-message-level 'debug)
-;; (setq request-log-level 'debug)
-
 (setq org-icalendar-timezone "Asia/Shanghai")
-;; (setq org-caldav-files org-agenda-files)
 (setq org-log-done 'time)
 (setq org-todo-keywords
       '((sequence "TODO(t@/!)" "PROGRESS(p@/!)" "BLOCKED(b@/!)" "|" "DONE(d@/!)" "CANCELED(c@/!)")))
@@ -56,11 +52,6 @@
  '(company-clang-arguments (quote ("-I/usr/include/c++/7" "-I/usr/include/")))
 )
 
-;;(custom-set-faces
-;; '(whitespace-tab ((t (:background "black" :underline t)))))
-
-;;(load-theme 'smart-mode-line-light)
-
 (add-to-list 'company-backends 'company-c-headers)
 (global-set-key [home] 'move-beginning-of-line)
 (global-set-key [select] 'move-end-of-line)
@@ -74,19 +65,22 @@
 
 ;; end of copied section
 
+
 (setenv "NODE_PATH"
   (concat
-    "/usr/lib/node_modules"  ":"
+   "/usr/lib/node_modules"  ":"
+   (concat (getenv "HOME") "/node_modules") ":"
     (getenv "NODE_PATH")
   )
 )
 
-(setq org-src-fontify-natively t)
+; (setq org-src-fontify-natively t)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((typescript . t)
-   ))
+   )
+ )
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
