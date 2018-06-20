@@ -32,8 +32,8 @@
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
 (global-set-key (kbd "M-x") 'execute-extended-command)
-(define-key global-map "\C-\M-[" 'shrink-window-horizontally)
-(define-key global-map "\C-\M-]" 'enlarge-window-horizontally)
+(define-key global-map "\M-{" 'shrink-window-horizontally)
+(define-key global-map "\M-}" 'enlarge-window-horizontally)
 (define-key global-map "\M-[" 'shrink-window)
 (define-key global-map "\M-]" 'enlarge-window)
 
