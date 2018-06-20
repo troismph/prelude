@@ -36,6 +36,7 @@
 (define-key global-map "\M-}" 'enlarge-window-horizontally)
 (define-key global-map "\M-[" 'shrink-window)
 (define-key global-map "\M-]" 'enlarge-window)
+(define-key global-map "\C-xf" 'other-frame)
 
 (setq org-icalendar-timezone "Asia/Shanghai")
 (setq org-log-done 'time)
