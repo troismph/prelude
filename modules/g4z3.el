@@ -13,6 +13,7 @@
 (prelude-require-package 'ob-typescript)
 (prelude-require-package 'exec-path-from-shell)
 (prelude-require-package 'tide)
+(prelude-require-package 'htmlize)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -86,6 +87,8 @@
  '((typescript . t)
    )
  )
+
+(setq org-src-window-setup (quote current-window))
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
