@@ -68,7 +68,11 @@
    (quote
     (("c" "g4z3's default capture template" entry
       (file "~/src/notes/inbox.org")
-      (file "~/src/notes/templates/capture.org")))))
+      (file "~/src/notes/templates/capture.org"))
+     ("j" "journal template" entry
+      (file "~/src/notes/journal.org")
+      (file "~/src/notes/templates/journal.org")
+      :empty-lines-before 1))))
  '(org-log-into-drawer t)
  '(org-src-lang-modes
    (quote
