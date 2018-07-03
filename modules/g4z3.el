@@ -15,6 +15,8 @@
 (prelude-require-package 'tide)
 (prelude-require-package 'htmlize)
 (prelude-require-package 'bshell)
+(load "bshell")
+(prelude-require-package 'ssh)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -111,6 +113,15 @@
   (eshell 'x)
   (rename-buffer (concat "*eshell-" bn "*"))
 )
+
+(defun bshell-spawn(bn)
+  "Open a new instance of bshell."
+  (interactive "sbshell name:")
+  (message bn)
+  (bshell-new)
+  (rename-buffer (concat "*bshell-" bn "*"))
+  )
+
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
