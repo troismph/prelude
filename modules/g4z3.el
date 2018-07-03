@@ -14,6 +14,7 @@
 (prelude-require-package 'exec-path-from-shell)
 (prelude-require-package 'tide)
 (prelude-require-package 'htmlize)
+(prelude-require-package 'bshell)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -46,6 +47,7 @@
 
 (setq org-refile-targets (quote (("~/src/notes/tracker.org" :maxlevel . 3)
                                  ("~/src/notes/personal.org" :maxlevel . 3)
+                                 ("~/src/notes/journal.org" :maxlevel . 3)
                                  )))
 (setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
@@ -101,6 +103,14 @@
   (exec-path-from-shell-initialize))
 
 (setq python-shell-interpreter "python3")
+
+(defun eshell-new(bn)
+  "Open a new instance of eshell."
+  (interactive "seshell name:")
+  (message bn)
+  (eshell 'x)
+  (rename-buffer (concat "*eshell-" bn "*"))
+)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
