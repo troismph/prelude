@@ -106,7 +106,7 @@
 
 (setq python-shell-interpreter "python3")
 
-(defun eshell-new(bn)
+(defun eshell-spawn(bn)
   "Open a new instance of eshell."
   (interactive "seshell name:")
   (message bn)
