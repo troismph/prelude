@@ -55,6 +55,17 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-lowest-priority 68)
 
+(defun org-agenda-contemplations()
+  (interactive)
+  (org-tags-view nil "+DEADLINE=\"\"+SCHEDULED=\"\"/!")
+  (rename-buffer "*Contemplation*")
+  )
+(defun org-agenda-now()
+  (interactive)
+  (org-agenda-list)
+  (rename-buffer "*Agenda*")
+  )
+
 (workgroups-mode 1)
 
 ;; copied from another el
