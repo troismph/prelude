@@ -55,6 +55,13 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-agenda-custom-commands
+   (quote
+    (("n" "Agenda and all TODOs"
+      ((agenda "" nil)
+       (alltodo "" nil))
+      nil)
+     ("x" "Contemplations" tags "+DEADLINE=\"\"+SCHEDULED=\"\"/!" nil))))
  '(org-agenda-files
    (quote
     ("~/src/notes/tracker.org" "~/src/notes/ignore/cal_inbox.org" "~/src/notes/personal.org")))
