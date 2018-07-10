@@ -17,6 +17,7 @@
 (prelude-require-package 'bshell)
 (load "bshell")
 (prelude-require-package 'ssh)
+(prelude-require-package 'gnus)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -132,6 +133,45 @@
   (rename-buffer (concat "*bshell-" bn "*"))
   )
 
+(setq nnml-directory "~/Mail/yitu")
+(setq message-directory "~/Mail/yitu")
+
+;;(setq gnus-ignored-newsgroups "^to\\.\\|^[0-9. ]+\\( \\|$\\)\\|^[\”]\”[#’()]")
+
+(setq gnus-select-method
+      '(nnimap "ytmail"
+               (nnimap-address "imap.mxhichina.com")
+               (nnimap-server-port 993)
+               (nnimap-stream ssl)))
+
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.mxhichina.com" 465 nil nil))
+      smtpmail-auth-credentials '(("smtp.mxhichina.com" 465 "penghan@yitu-inc.com" nil))
+      smtpmail-default-smtp-server "smtp.mxhichina.com"
+      smtpmail-smtp-server "smtp.mxhichina.com"
+      smtpmail-smtp-service 465)
+
+;; http://groups.google.com/group/gnu.emacs.gnus/browse_thread/thread/a673a74356e7141f
+(when window-system
+  (setq gnus-sum-thread-tree-indent "  ")
+  (setq gnus-sum-thread-tree-root "") ;; "● ")
+  (setq gnus-sum-thread-tree-false-root "") ;; "◯ ")
+  (setq gnus-sum-thread-tree-single-indent "") ;; "◎ ")
+  (setq gnus-sum-thread-tree-vertical        "│")
+  (setq gnus-sum-thread-tree-leaf-with-other "├─► ")
+  (setq gnus-sum-thread-tree-single-leaf     "╰─► "))
+(setq gnus-summary-line-format
+      (concat
+       "%0{%U%R%z%}"
+       "%3{│%}" "%1{%d%}" "%3{│%}" ;; date
+       "  "
+       "%4{%-20,20f%}"               ;; name
+       "  "
+       "%3{│%}"
+       " "
+       "%1{%B%}"
+       "%s\n"))
+(setq gnus-summary-display-arrow t)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
