@@ -110,7 +110,7 @@
    )
  )
 
-(setq org-src-window-setup (quote current-window))
+(setq org-src-window-setup (quote other-window))
 
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
