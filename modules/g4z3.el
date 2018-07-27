@@ -18,6 +18,7 @@
 (load "bshell")
 (prelude-require-package 'ssh)
 (prelude-require-package 'gnus)
+(prelude-require-package 'seq)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -172,6 +173,18 @@
        "%1{%B%}"
        "%s\n"))
 (setq gnus-summary-display-arrow t)
+
+(setq g4z3-org-refile-exclude '("journal.org"))
+
+(setq g4z3-org-refile-exclude-regex "journal")
+
+(defun g4z3-org-refile-filter(s)
+  (and (string-match "^[^#]*\.org$" s) (not (string-match g4z3-org-refile-exclude-regex s)))
+  )
+
+(defun g4z3-org-refile-targets()
+  (seq-filter 'g4z3-org-refile-filter (projectile-current-project-files))
+  )
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
