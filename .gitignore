@@ -29,3 +29,4 @@ var/
 auto-save-list/
 savefile/
 project-explorer-cache/
+*.jar
