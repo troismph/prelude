@@ -21,6 +21,7 @@
 (prelude-require-package 'meghanada)
 (prelude-require-package 'ensime)
 (prelude-require-package 'scala-mode)
+(prelude-require-package 'material-theme)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -69,7 +70,7 @@
   (org-agenda-list)
   )
 
-(workgroups-mode 1)
+;; (workgroups-mode 1)
 
 ;; copied from another el
 
