@@ -82,7 +82,7 @@
       :empty-lines-before 1))))
  '(org-log-into-drawer t)
  '(org-refile-targets (quote ((g4z3-org-refile-targets :maxlevel . 2))))
- '(org-refile-use-outline-path (quote file))
+ '(org-refile-use-outline-path (quote full-file-path))
  '(org-src-lang-modes
    (quote
     (("ocaml" . tuareg)
