@@ -200,5 +200,9 @@
   (seq-filter 'g4z3-org-refile-filter (projectile-current-project-files))
   )
 
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 (provide 'g4z3)
 ;;; g4z3.el ends here
