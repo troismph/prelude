@@ -22,6 +22,7 @@
 (prelude-require-package 'ensime)
 (prelude-require-package 'scala-mode)
 (prelude-require-package 'material-theme)
+(prelude-require-package 'seq)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -52,12 +53,6 @@
 (setq org-todo-keywords
       '((sequence "TODO(t@/!)" "PROGRESS(p@/!)" "BLOCKED(b@/!)" "|" "DONE(d@/!)" "CANCELED(c@/!)")))
 
-(setq org-refile-targets (quote (("~/src/notes/tracker.org" :maxlevel . 3)
-                                 ("~/src/notes/personal.org" :maxlevel . 3)
-                                 ("~/src/notes/journal.org" :maxlevel . 3)
-                                 ("~/src/notes/projects.org" :maxlevel . 2)
-                                 )))
-(setq org-refile-use-outline-path 'file)
 (setq org-outline-path-complete-in-steps nil)
 (setq org-lowest-priority 68)
 
@@ -192,6 +187,18 @@
  (t
   (setq meghanada-java-path "java")
   (setq meghanada-maven-path "mvn")))
+
+(setq g4z3-org-refile-exclude '("journal.org"))
+
+(setq g4z3-org-refile-exclude-regex "journal")
+
+(defun g4z3-org-refile-filter(s)
+  (and (string-match "^[^#]*\.org$" s) (not (string-match g4z3-org-refile-exclude-regex s)))
+  )
+
+(defun g4z3-org-refile-targets()
+  (seq-filter 'g4z3-org-refile-filter (projectile-current-project-files))
+  )
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
