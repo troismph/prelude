@@ -196,8 +196,15 @@
   (and (string-match "^[^#]*\.org$" s) (not (string-match g4z3-org-refile-exclude-regex s)))
   )
 
-(defun g4z3-org-refile-targets()
-  (seq-filter 'g4z3-org-refile-filter (projectile-current-project-files))
+(defun g4z3-expand-path-by-project (p)
+  (let (prj-root (projectile-project-root))
+    (expand-file-name p prj-root)
+    )
+  )
+
+(defun g4z3-org-refile-targets ()
+  (seq-filter 'g4z3-org-refile-filter
+    (mapcar 'g4z3-expand-path-by-project (projectile-current-project-files)))
   )
 
 (projectile-mode +1)
