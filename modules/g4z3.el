@@ -23,6 +23,7 @@
 (prelude-require-package 'scala-mode)
 (prelude-require-package 'material-theme)
 (prelude-require-package 'seq)
+(prelude-require-package 'ansible)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -210,6 +211,21 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(setq neo-window-fixed-size nil)
+
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (local-set-key (kbd "C-c C-<right>") 'hs-show-block)
+    (local-set-key (kbd "C-c C-<left>")  'hs-hide-block)
+    (local-set-key (kbd "C-c C-<up>")    'hs-hide-all)
+    (local-set-key (kbd "C-c C-<down>")  'hs-show-all)
+    (local-set-key (kbd "M-C-,") 'highlight-symbol-at-point)
+    (hs-minor-mode t)
+    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+      (ggtags-mode 1))
+    )
+  )
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
