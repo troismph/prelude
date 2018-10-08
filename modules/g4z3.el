@@ -236,7 +236,10 @@
   (lambda()
     (local-set-key (kbd "C-c C-g") 'org-recoll-search)
   )
-)
+  )
+
+(global-set-key (kbd "C-S p") 'scroll-down-line)
+(global-set-key (kbd "C-S n") 'scroll-up-line)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
