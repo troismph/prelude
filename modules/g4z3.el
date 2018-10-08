@@ -220,14 +220,15 @@
 
 (add-hook 'c-mode-common-hook
   (lambda()
+    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+      (ggtags-mode 1))
     (local-set-key (kbd "C-c C-<right>") 'hs-show-block)
     (local-set-key (kbd "C-c C-<left>")  'hs-hide-block)
     (local-set-key (kbd "C-c C-<up>")    'hs-hide-all)
     (local-set-key (kbd "C-c C-<down>")  'hs-show-all)
-    (local-set-key (kbd "M-C-,") 'highlight-symbol-at-point)
+    (local-set-key (kbd "C->") 'highlight-symbol-at-point)
+    (local-set-key (kbd "C-<") 'hi-lock-mode)
     (hs-minor-mode t)
-    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
-      (ggtags-mode 1))
     )
   )
 
@@ -238,8 +239,8 @@
   )
   )
 
-(global-set-key (kbd "C-S p") 'scroll-down-line)
-(global-set-key (kbd "C-S n") 'scroll-up-line)
+(global-set-key (kbd "C-S-p") 'scroll-down-line)
+(global-set-key (kbd "C-S-n") 'scroll-up-line)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
