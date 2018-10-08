@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+;; add external dirs to load-path
+(let ((default-directory  "~/.emacs.d/external/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
 (prelude-require-package 'neotree)
 (prelude-require-package 'virtualenvwrapper)
 (prelude-require-package 'company-c-headers)
@@ -226,6 +230,13 @@
       (ggtags-mode 1))
     )
   )
+
+(load-library "org-recoll")
+(add-hook 'org-mode-hook
+  (lambda()
+    (local-set-key (kbd "C-c C-g") 'org-recoll-search)
+  )
+)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
