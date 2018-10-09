@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+
 (prelude-require-package 'neotree)
 (prelude-require-package 'virtualenvwrapper)
 (prelude-require-package 'company-c-headers)
@@ -23,6 +25,10 @@
 (prelude-require-package 'scala-mode)
 (prelude-require-package 'material-theme)
 (prelude-require-package 'seq)
+(prelude-require-package 'all-the-icons)
+(prelude-require-package 'graphviz-dot-mode)
+(prelude-require-package 'ox-reveal)
+(load "org-crypt")
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -210,6 +216,14 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+;; (setq org-reveal-root "file://~/src/reveal.js")
+
+(org-crypt-use-before-save-magic)
+(setq org-tags-exclude-from-inheritance (quote ("crypt")))
+(setq org-crypt-key nil)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
