@@ -1,0 +1,3 @@
+[submodule "external/org-recoll"]
+	path = external/org-recoll
+	url = https://github.com/alraban/org-recoll.git

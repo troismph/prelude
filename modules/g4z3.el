@@ -6,6 +6,10 @@
 
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
+;; add external dirs to load-path
+(let ((default-directory  "~/.emacs.d/external/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
 (prelude-require-package 'neotree)
 (prelude-require-package 'virtualenvwrapper)
 (prelude-require-package 'company-c-headers)
@@ -29,6 +33,7 @@
 (prelude-require-package 'graphviz-dot-mode)
 (prelude-require-package 'ox-reveal)
 (load "org-crypt")
+(prelude-require-package 'ansible)
 
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -224,6 +229,32 @@
 (org-crypt-use-before-save-magic)
 (setq org-tags-exclude-from-inheritance (quote ("crypt")))
 (setq org-crypt-key nil)
+
+(setq neo-window-fixed-size nil)
+
+(add-hook 'c-mode-common-hook
+  (lambda()
+    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+      (ggtags-mode 1))
+    (local-set-key (kbd "C-c C-<right>") 'hs-show-block)
+    (local-set-key (kbd "C-c C-<left>")  'hs-hide-block)
+    (local-set-key (kbd "C-c C-<up>")    'hs-hide-all)
+    (local-set-key (kbd "C-c C-<down>")  'hs-show-all)
+    (local-set-key (kbd "C->") 'highlight-symbol-at-point)
+    (local-set-key (kbd "C-<") 'hi-lock-mode)
+    (hs-minor-mode t)
+    )
+  )
+
+(load-library "org-recoll")
+(add-hook 'org-mode-hook
+  (lambda()
+    (local-set-key (kbd "C-c C-g") 'org-recoll-search)
+  )
+  )
+
+(global-set-key (kbd "C-S-p") 'scroll-down-line)
+(global-set-key (kbd "C-S-n") 'scroll-up-line)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
