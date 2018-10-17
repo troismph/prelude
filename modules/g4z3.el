@@ -202,7 +202,7 @@
   )
 
 (defun g4z3-expand-path-by-project (p)
-  (let (prj-root (projectile-project-root))
+  (let ((prj-root (projectile-project-root)))
     (expand-file-name p prj-root)
     )
   )
