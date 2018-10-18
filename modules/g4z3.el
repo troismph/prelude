@@ -222,6 +222,14 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
+(defun g4z3-org-archive-done-tasks ()
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/DONE" 'tree))
+
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 ;; (setq org-reveal-root "file://~/src/reveal.js")
