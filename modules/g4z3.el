@@ -264,5 +264,43 @@
 (global-set-key (kbd "C-S-p") 'scroll-down-line)
 (global-set-key (kbd "C-S-n") 'scroll-up-line)
 
+(defun g4z3-print-elem (elem)
+  "Print AST element ELEM."
+  (let* ((cb (org-element-property :contents-begin elem))
+         (ce (org-element-property :contents-end elem))
+         )
+    (buffer-substring-no-properties cb ce)
+    )
+  )
+
+
+(defun g4z3-verses-load-random (file_path)
+  "Load a random section from FILE_PATH."
+  (with-temp-buffer
+    (insert-file-contents file_path)
+    (let* ((ast (org-element-parse-buffer))
+           (cnt (- (length ast) 2)))
+      (g4z3-print-elem (nth (random cnt) ast))
+      )
+    )
+  )
+
+(setq g4z3-verse-file-path "~/src/notes/stray_birds.org")
+
+(defun g4z3-verse-of-the-day ()
+  "Print a random verse from g4z3-verse-file-path."
+  (with-output-to-temp-buffer "verse_of_the_day"
+    (print (g4z3-verses-load-random g4z3-verse-file-path))
+    ))
+
+(add-hook 'after-make-frame-functions
+          (lambda(frame)
+            (select-frame frame)
+            (g4z3-verse-of-the-day)
+            )
+          )
+
+(g4z3-verse-of-the-day)
+
 (provide 'g4z3)
 ;;; g4z3.el ends here
