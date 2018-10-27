@@ -35,6 +35,9 @@
 (load "org-crypt")
 (prelude-require-package 'ansible)
 
+;; start frame in maximized state
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
@@ -50,7 +53,7 @@
 
 (define-key global-map "\C-cc" 'org-capture)
 
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
 
 (global-set-key (kbd "M-x") 'execute-extended-command)
 (define-key global-map "\M-{" 'shrink-window-horizontally)
@@ -289,6 +292,7 @@
 
 (defun g4z3-verse-of-the-day ()
   "Print a random verse from g4z3-verse-file-path."
+  (interactive)
   (with-output-to-temp-buffer "verse_of_the_day"
     (print (g4z3-verses-load-random g4z3-verse-file-path))
     ))
@@ -301,6 +305,8 @@
           )
 
 (g4z3-verse-of-the-day)
+
+(global-set-key (kbd "C-c v") 'g4z3-verse-of-the-day)
 
 (provide 'g4z3)
 ;;; g4z3.el ends here
