@@ -108,6 +108,7 @@
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
+ '(prelude-auto-save nil)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
