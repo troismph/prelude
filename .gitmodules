@@ -1,3 +1,6 @@
 [submodule "external/org-recoll"]
 	path = external/org-recoll
 	url = https://github.com/troismph/org-recoll.git
+[submodule "external/openapi-yaml-mode"]
+	path = external/openapi-yaml-mode
+	url = https://github.com/magoyette/openapi-yaml-mode.git
