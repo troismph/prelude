@@ -34,6 +34,7 @@
 (prelude-require-package 'ox-reveal)
 (load "org-crypt")
 (prelude-require-package 'ansible)
+(load "openapi-yaml-mode")
 
 ;; start frame in maximized state
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
