@@ -311,5 +311,17 @@
 
 (global-set-key (kbd "C-c v") 'g4z3-verse-of-the-day)
 
+(defun g4z3-org-link-info (link)
+  (when (string= (org-element-property :type link) "file")
+    (org-element-property :path link))
+  )
+
+;; generate a list of link files from an org file
+;; must be invoked in an org buffer
+(defun g4z3-org-list-link-files ()
+  (org-element-map (org-element-parse-buffer) 'link 'g4z3-org-link-info)
+  )
+
+
 (provide 'g4z3)
 ;;; g4z3.el ends here
