@@ -4,3 +4,6 @@
 [submodule "external/openapi-yaml-mode"]
 	path = external/openapi-yaml-mode
 	url = https://github.com/magoyette/openapi-yaml-mode.git
+[submodule "external/f.el"]
+	path = external/f.el
+	url = https://github.com/rejeep/f.el.git
