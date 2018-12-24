@@ -7,3 +7,6 @@
 [submodule "external/f.el"]
 	path = external/f.el
 	url = https://github.com/rejeep/f.el.git
+[submodule "external/org-reveal"]
+	path = external/org-reveal
+	url = https://github.com/yjwen/org-reveal.git
