@@ -39,4 +39,3 @@
 ;; (require 'prelude-xml)
 ;; (require 'prelude-yaml)
 (require 'g4z3)
-(require 'g4z3-tide)
