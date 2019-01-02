@@ -38,6 +38,7 @@
 (load "openapi-yaml-mode")
 (prelude-require-package 'ox-pandoc)
 (load "f")
+(prelude-require-package 'git-auto-commit-mode)
 
 ;; start frame in maximized state
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
