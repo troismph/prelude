@@ -263,7 +263,12 @@
             )
           )
 
-(g4z3-verse-of-the-day)
+(cond
+ ((eq system-type 'windows-nt)
+  )
+ (t
+  (g4z3-verse-of-the-day)
+  ))
 
 (global-set-key (kbd "C-c v") 'g4z3-verse-of-the-day)
 
