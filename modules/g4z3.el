@@ -265,7 +265,9 @@
 (add-hook 'org-mode-hook
   (lambda()
     (local-set-key (kbd "C-c C-g") 'org-recoll-search)
-  )
+    (local-set-key (kbd "M-.") 'org-open-at-point)
+    (local-set-key (kbd "M-,") 'org-mark-ring-goto)
+    )
   )
 
 (global-set-key (kbd "C-S-p") 'scroll-down-line)
